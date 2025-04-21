@@ -1,49 +1,147 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from "../layouts/Base.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { Image } from "astro:assets";
+import Section from "../components/Section.astro";
+import H1 from "../components/H1.astro";
+import H2 from "../components/H2.astro";
+import H3 from "../components/H3.astro";
+import Card from "../components/Card.astro";
+import TableList from "../components/TableList.astro";
+import CardListItem from "../components/CardListItem.astro";
+import CardListWrapper from "../components/CardListWrapper.astro";
+import ResumeSection from "../components/ResumeSection.astro";
+import ProjectsSection from "../components/ProjectsSection.astro";
+import sampleImage from "../assets/skogafoss.jpg";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <Section>
+    <H1>About</H1>
+    <Image
+      src={sampleImage}
+      alt="Skógafoss"
+      class="rounded-md grayscale hover:grayscale-0 duration-200 ease-in-out border-t border-stone-700/0 hover:border-stone-700 hover:shadow-md rounded-sm my-4"
+    />
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci culpa
+      blanditiis commodi quis. Facilis necessitatibus, maiores corporis ipsum
+      quisquam nulla officiis sapiente? Hic deleniti soluta fugiat voluptates
+      cum animi eius.
+    </p>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+      consequatur perferendis culpa, iste illum quisquam cumque modi dignissimos
+      ex amet deleniti alias libero. Dolores dolor esse, numquam quia similique
+      dolorum.
+    </p>
+
+    <H2>Velit praesentium </H2>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae numquam
+      fugit veniam. Minima eveniet aperiam et necessitatibus, obcaecati tempora.
+      Eum, numquam. Nulla ipsam aperiam tempora. Fugiat earum aperiam tempore
+      porro?
+    </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus
+      consectetur eligendi voluptatem quia iure ut error accusamus laboriosam,
+      sequi veniam, quos veritatis culpa. Facilis dolor natus, quasi corrupti
+      quis ratione.
+    </p>
+    <H3>Amet consectetur</H3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptatibus
+      modi sed iste accusamus illo atque rem accusantium dignissimos,
+      consequuntur in quidem impedit. Quis, incidunt atque ad enim accusamus
+      nisi.
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+      doloremque facilis ex sit vel repellendus dolorem asperiores? Est
+      perferendis cum, pariatur quaerat necessitatibus odio, accusantium eius
+      inventore, vitae laboriosam nobis.
+    </p>
+  </Section>
+  <Section>
+    <H2>Magni fugit</H2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+      inventore nam corporis reiciendis ipsum? Laudantium nemo delectus
+      repellendus quisquam, enim, corporis, voluptates alias sit magnam sequi
+      illum. Amet, consequuntur quisquam.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sequi fugiat
+      voluptates quis a quos tenetur! Minima, magni fugit corporis perspiciatis
+      dicta distinctio soluta sit. Iste nisi nemo quis quisquam!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum rem in,
+      voluptate doloremque soluta tenetur laborum corporis quam voluptates
+      architecto ullam autem vero maiores quos. Voluptas iure nostrum incidunt
+      fuga!
+    </p>
+  </Section>
+  <Section>
+    <H2>Voluptates architecto</H2>
+    <p>
+      This is a section where the cards are created manually. It uses the same
+      style as the other lists of cards you will find in this template but you
+      can directly edit and update the content. The other card lists are
+      automatcally generated from a content collection from Markdown files.
+    </p>
+    <CardListWrapper>
+      <CardListItem>
+        <Card
+          title="Lorem ipsum dolor sit amet consectetur, adipisicing elit"
+          body="Iste, quos labore illum nulla quas aut suscipit assumenda consequatur necessitatibus dignissimos ea perspiciatis quam corporis dolor adipisci eveniet nobis! Culpa, quod!"
+          href="/"
+        />
+      </CardListItem>
+      <CardListItem>
+        <Card
+          title="Ut sequi fugiat voluptates quis a quos tenetur"
+          body="Illum rem in, voluptate doloremque soluta tenetur laborum corporis quam voluptates architecto ullam autem vero maiores quos. "
+          href="/"
+        />
+      </CardListItem>
+      <CardListItem>
+        <Card
+          title="Minima, magni fugit corporis perspiciatis dicta"
+          body="Voluptas iure nostrum incidunt fuga! Voluptas inventore nam corporis reiciendis ipsum?"
+          href="/"
+        />
+      </CardListItem>
+    </CardListWrapper>
+  </Section>
+  <Section>
+    <H2>Technical Skills</H2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <TableList
+      list={[
+        {
+          category: "Lorem",
+          items: "Quisque, faucibus, ex, sapien, vitae",
+        },
+        {
+          category: "Ipsum",
+          items: "Iaculis, massa, nisl, malesuada, lacinia, integer",
+        },
+        { category: "Dolor", items: "Pulvinar, vivamus, fringilla, lacus" },
+      ]}
+    />
+  </Section>
+
+  <Section>
+    <H2>Projects</H2>
+    <ProjectsSection />
+  </Section>
+
+  <Section>
+    <H2>Work experience</H2>
+    <ResumeSection />
+  </Section>
+</Layout>
