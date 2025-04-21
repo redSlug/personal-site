@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Base.astro";
+import H1 from "../components/H1.astro";
+import H2 from "../components/H2.astro";
+import Section from "../components/Section.astro";
+import ResumeSection from "../components/ResumeSection.astro";
+import TableList from "../components/TableList.astro";
+import { WORK } from "../consts";
+---
+
+<Layout title={WORK.TITLE} description={WORK.DESCRIPTION}>
+  <Section>
+    <H1>Work</H1>
+
+    <H2>Work experience</H2>
+    <p>
+      {WORK.DESCRIPTION}
+    </p>
+    <ResumeSection />
+  </Section>
+  <Section>
+    <H2>Skills</H2>
+    <TableList
+      list={[
+        {
+          category: "Lorem",
+          items: "Quisque, faucibus, ex, sapien, vitae",
+        },
+        {
+          category: "Ipsum",
+          items: "Iaculis, massa, nisl, malesuada, lacinia, integer",
+        },
+        { category: "Dolor", items: "Pulvinar, vivamus, fringilla, lacus" },
+      ]}
+    />
+  </Section>
+</Layout>
