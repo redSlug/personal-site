@@ -1,0 +1,17 @@
+---
+interface Props {
+  list: { category: string; items: string }[];
+}
+const { list } = Astro.props;
+---
+
+<ul class="divide-y-2 divide-stone-700">
+  {
+    list.map((row) => (
+      <li class="grid grid-cols-[1fr_2fr] gap-2 py-3">
+        <p class="font-semibold text-stone-300">{row.category}</p>
+        <p>{row.items}</p>
+      </li>
+    ))
+  }
+</ul>

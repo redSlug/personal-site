@@ -1,0 +1,20 @@
+---
+import { getCollection, render } from "astro:content";
+import Resume from "./Resume.astro";
+const work = (await getCollection("work")).sort(
+  (a, b) => b.data.dateStart.valueOf() - a.data.dateStart.valueOf()
+);
+---
+
+{
+  work.map((position) => (
+    <Resume
+      role={position.data.role}
+      organization={position.data.organization}
+      location={position.data?.location}
+      body={position.rendered?.html}
+      dateStart={position.data.dateStart}
+      dateEnd={position.data.dateEnd}
+    />
+  ))
+}
