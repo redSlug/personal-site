@@ -77,4 +77,4 @@ Decide for yourself how you would like to organize your site, and then deploy it
 
 ## Credits
 
-This template was inspired by [Brittany Chiang](https://brittanychiang.com/) and [Mark Horn](markhorn.dev)'s personal websites, which you should definitely check out!
+This template was inspired by [Brittany Chiang](https://brittanychiang.com/) and [Mark Horn](https://markhorn.dev)'s personal websites, which you should definitely check out!
