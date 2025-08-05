@@ -29,4 +29,5 @@ export const PROJECTS: Metadata = {
 export const SOCIALS: Socials = [
   { NAME: "linkedin", HREF: "https://www.linkedin.com/in/bdettmer/" },
   { NAME: "github", HREF: "https://github.com/redslug" },
+  { NAME: "medium", HREF: "https://medium.com/@bdettmer" },
 ];
