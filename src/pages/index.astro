@@ -5,143 +5,62 @@ import { Image } from "astro:assets";
 import Section from "../components/Section.astro";
 import H1 from "../components/H1.astro";
 import H2 from "../components/H2.astro";
-import H3 from "../components/H3.astro";
-import Card from "../components/Card.astro";
 import TableList from "../components/TableList.astro";
-import CardListItem from "../components/CardListItem.astro";
-import CardListWrapper from "../components/CardListWrapper.astro";
-import ResumeSection from "../components/ResumeSection.astro";
-import ProjectsSection from "../components/ProjectsSection.astro";
-import sampleImage from "../assets/skogafoss.jpg";
+import ProjectsShort from "../components/ProjectsShort.astro";
+import image from "../assets/headshot.jpg";
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <Section>
-    <H1>About</H1>
+    <H1>Hello, I'm Bradley</H1>
     <Image
-      src={sampleImage}
-      alt="Skógafoss"
-      class="rounded-md grayscale hover:grayscale-0 duration-200 ease-in-out border-t border-stone-700/0 hover:border-stone-700 hover:shadow-md rounded-sm my-4"
+      src={image}
+      alt="Bradley Dettmer in the forrest wearing a blue shirt"
+      class="image-transition"
     />
 
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci culpa
-      blanditiis commodi quis. Facilis necessitatibus, maiores corporis ipsum
-      quisquam nulla officiis sapiente? Hic deleniti soluta fugiat voluptates
-      cum animi eius.
+      I am a creative and collaborative Software Engineer and hacker in New York City.
+      Previously, I have worked as an engineer at Peloton, Hustle, Google and Apple.
     </p>
+  </Section>
 
+  <Section>
+    <H2>Current project</H2>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-      consequatur perferendis culpa, iste illum quisquam cumque modi dignissimos
-      ex amet deleniti alias libero. Dolores dolor esse, numquam quia similique
-      dolorum.
+      Below is one of my current projects. <a
+        href="projects/"
+        class="text-green-400 dark:text-green-400 hover:underline"
+        aria-label="Goes to Projects section of this site"
+        >You can find more of my projects here</a
+      >.
     </p>
+    <ProjectsShort />
+  </Section>
 
-    <H2>Velit praesentium </H2>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae numquam
-      fugit veniam. Minima eveniet aperiam et necessitatibus, obcaecati tempora.
-      Eum, numquam. Nulla ipsam aperiam tempora. Fugiat earum aperiam tempore
-      porro?
-    </p>
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus
-      consectetur eligendi voluptatem quia iure ut error accusamus laboriosam,
-      sequi veniam, quos veritatis culpa. Facilis dolor natus, quasi corrupti
-      quis ratione.
-    </p>
-    <H3>Amet consectetur</H3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptatibus
-      modi sed iste accusamus illo atque rem accusantium dignissimos,
-      consequuntur in quidem impedit. Quis, incidunt atque ad enim accusamus
-      nisi.
-    </p>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-      doloremque facilis ex sit vel repellendus dolorem asperiores? Est
-      perferendis cum, pariatur quaerat necessitatibus odio, accusantium eius
-      inventore, vitae laboriosam nobis.
-    </p>
-  </Section>
-  <Section>
-    <H2>Magni fugit</H2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-      inventore nam corporis reiciendis ipsum? Laudantium nemo delectus
-      repellendus quisquam, enim, corporis, voluptates alias sit magnam sequi
-      illum. Amet, consequuntur quisquam.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sequi fugiat
-      voluptates quis a quos tenetur! Minima, magni fugit corporis perspiciatis
-      dicta distinctio soluta sit. Iste nisi nemo quis quisquam!
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum rem in,
-      voluptate doloremque soluta tenetur laborum corporis quam voluptates
-      architecto ullam autem vero maiores quos. Voluptas iure nostrum incidunt
-      fuga!
-    </p>
-  </Section>
-  <Section>
-    <H2>Voluptates architecto</H2>
-    <p>
-      This is a section where the cards are created manually. It uses the same
-      style as the other lists of cards you will find in this template but you
-      can directly edit and update the content. The other card lists are
-      automatcally generated from a content collection from Markdown files.
-    </p>
-    <CardListWrapper>
-      <CardListItem>
-        <Card
-          title="Lorem ipsum dolor sit amet consectetur, adipisicing elit"
-          body="Iste, quos labore illum nulla quas aut suscipit assumenda consequatur necessitatibus dignissimos ea perspiciatis quam corporis dolor adipisci eveniet nobis! Culpa, quod!"
-          href="/"
-        />
-      </CardListItem>
-      <CardListItem>
-        <Card
-          title="Ut sequi fugiat voluptates quis a quos tenetur"
-          body="Illum rem in, voluptate doloremque soluta tenetur laborum corporis quam voluptates architecto ullam autem vero maiores quos. "
-          href="/"
-        />
-      </CardListItem>
-      <CardListItem>
-        <Card
-          title="Minima, magni fugit corporis perspiciatis dicta"
-          body="Voluptas iure nostrum incidunt fuga! Voluptas inventore nam corporis reiciendis ipsum?"
-          href="/"
-        />
-      </CardListItem>
-    </CardListWrapper>
-  </Section>
   <Section>
     <H2>Technical Skills</H2>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>
+      My typical tech stack consists of Python, React (TypeScript), Express, Node, AWS and
+      PostgreSQL. Below is a list of the languages, frameworks, and
+      technology I've worked with:
+    </p>
     <TableList
       list={[
         {
-          category: "Lorem",
-          items: "Quisque, faucibus, ex, sapien, vitae",
+          category: "Languages",
+          items: "TypeScript, Python, Kotlin, Java, Javascript, Bash, Ruby, Go, Objective-C, Rust, YAML, SQL, CSS"
         },
         {
-          category: "Ipsum",
-          items: "Iaculis, massa, nisl, malesuada, lacinia, integer",
+          category: "Frameworks & Libraries",
+          items: "React, Next.js, Express.js, Astro, TailwindCSS, Next.js, Vercel, Flask, Celery, marshmallow, SAM, Zustand, PeerJS, WebRTC, Kubernetes, Chef, Github Actions, Jenkins, Argo, WebSockets"
         },
-        { category: "Dolor", items: "Pulvinar, vivamus, fringilla, lacus" },
+        {
+          category: "Databases & Infrastructure",
+          items:
+            "Google Cloud, Docker, Supabase, AWS, Terraform, Kafka, Elasticsearch, PostgreSQL, SQLAlchemy, Alembic, JIRA, kustomize, mongo, redis",
+        },
       ]}
     />
-  </Section>
-
-  <Section>
-    <H2>Projects</H2>
-    <ProjectsSection />
-  </Section>
-
-  <Section>
-    <H2>Work experience</H2>
-    <ResumeSection />
   </Section>
 </Layout>

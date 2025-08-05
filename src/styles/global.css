@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
+
+.image-transition {
+  @apply rounded-md grayscale hover:grayscale-0 duration-400 ease-in-out border-t border-stone-50/0 hover:border-stone-50/100 dark:border-stone-700/0 dark:hover:border-stone-700 hover:shadow-md my-4;
+}

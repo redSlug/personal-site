@@ -10,32 +10,22 @@ interface Props {
 const { href, title, body, tags, date } = Astro.props;
 ---
 
-{
-  // Adding a link is completely optional for this component
-  // If no link is provided, the card will render without the
-  // corresponding <a> tag surrounding the card in order
-  // to be semantically clear
-  //
-  // Most other aspects of this card are optional as well. Unused
-  // variables will not render.
-}
-
 <div
-  class="md:px-8 px-6 py-6 bg-stone-800/0 hover:bg-stone-800 duration-200 ease-in-out rounded-md border-t border-stone-700/0 hover:border-stone-700 hover:shadow-md group/card md:not-hover:-translate-x-8 not-hover:-translate-x-6">
+  class="md:px-8 px-6 py-6 bg-stone-200/0 hover:bg-stone-200/50 dark:bg-stone-800/0 dark:hover:bg-stone-800 duration-200 ease-in-out rounded-md border-t border-stone-50/0 hover:border-stone-50 dark:border-stone-700/0 dark:hover:border-stone-700 hover:shadow-md group/card md:not-hover:-translate-x-8 not-hover:-translate-x-6">
   {
     href ? (
       <a href={href} class="hover:cursor-pointer">
         <div class="space-y-2">
           <div class="flex items-baseline gap-2">
-            <h3 class="text-md text-stone-300 font-semibold group-hover/card:text-indigo-300 duration-200 ease-in-out">
+            <h3 class="text-md text-stone-600 dark:text-stone-300 font-semibold group-hover/card:text-green-400 group-hover/card:dark:text-green-400 duration-200 ease-in-out">
               {title}
             </h3>
-            <i class="ph-fill ph-arrow-square-out text-indigo-300 hidden group-hover/card:block" />
+            <i class="ph-fill ph-arrow-square-out text-green-400 dark:text-green-400 hidden group-hover/card:block" />
           </div>
 
           {date && (
             <div>
-              <p class="text-sm text-stone-400 font-light">
+              <p class="text-sm text-stone-500 dark:text-stone-400 font-light">
                 {date.getFullYear() + 1}
               </p>
             </div>
@@ -43,9 +33,9 @@ const { href, title, body, tags, date } = Astro.props;
 
           <p class="">{body}</p>
           {tags && (
-            <div class="flex gap-2">
+            <div class="flex flex-wrap gap-2">
               {tags.map((tag) => (
-                <p class="text-indigo-300 bg-indigo-900/25 group-hover/card:bg-indigo-900/50 px-2 py-1 rounded-md text-xs duration-200 ease-in-out">
+                <p class="text-green-600 bg-green-50 group-hover/card:bg-green-400/100 group-hover/card:text-white group-hover/card:dark:text-green-400 dark:text-green-400 dark:bg-green-900/25 group-hover/card:dark:bg-green-900/50 px-2 py-1 rounded-md text-xs duration-200 ease-in-out">
                   {tag}
                 </p>
               ))}
@@ -55,7 +45,7 @@ const { href, title, body, tags, date } = Astro.props;
       </a>
     ) : (
       <div class="space-y-2">
-        <h3 class="text-md text-stone-300 font-semibold group-hover/card:text-indigo-300 duration-200 ease-in-out">
+        <h3 class="text-md text-stone-300 font-semibold group-hover/card:text-green-400 duration-200 ease-in-out">
           {title}
         </h3>
         {date && (
@@ -68,9 +58,9 @@ const { href, title, body, tags, date } = Astro.props;
 
         <p class="">{body}</p>
         {tags && (
-          <div class="flex gap-2">
+          <div class="flex flex-wrap gap-2 max-w-100">
             {tags.map((tag) => (
-              <p class="text-indigo-300 bg-indigo-900/25 group-hover/card:bg-indigo-900/50 px-2 py-1 rounded-md text-xs duration-200 ease-in-out">
+              <p class="text-green-600 bg-green-50 group-hover/card:bg-green-400/100 group-hover/card:text-white group-hover/card:dark:text-green-400 dark:text-green-400 dark:bg-green-900/25 group-hover/card:dark:bg-green-900/50 px-2 py-1 rounded-md text-xs duration-200 ease-in-out">
                 {tag}
               </p>
             ))}

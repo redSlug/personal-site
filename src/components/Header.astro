@@ -2,20 +2,25 @@
 import { SITE_TITLE } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
 import Container from "./Container.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<header class="backdrop-blur-lg sticky top-0 w-full flex justify-center z-1000">
+<header
+  class="backdrop-blur-2xl sticky top-0 w-full flex justify-center z-1000">
   <Container>
     <div class="w-full my-4">
       <nav class="flex justify-between text-sm items-center">
-        <h2 class="font-semibold text-indigo-300">
+        <h2
+          class="font-semibold text-green-400 dark:text-green-400 hover:underline">
           <a href="/">{SITE_TITLE}</a>
         </h2>
-        <div class="internal-links text-stone-400 flex gap-1">
-          <HeaderLink href="/">Home</HeaderLink>
-          <HeaderLink href="/work">Work</HeaderLink>
+        <div
+          class="internal-links text-stone-600 dark:text-stone-400 flex gap-1">
+          <HeaderLink href="/">About</HeaderLink>
+          <!-- <HeaderLink href="/work">Work</HeaderLink> -->
           <HeaderLink href="/projects">Projects</HeaderLink>
-          <HeaderLink href="/blog">Blog</HeaderLink>
+          <!-- <HeaderLink href="/blog">Blog</HeaderLink> -->
+          <ThemeToggle />
         </div>
       </nav>
     </div>

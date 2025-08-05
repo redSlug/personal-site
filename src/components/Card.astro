@@ -12,11 +12,11 @@ const { href, title, body, date } = Astro.props;
 ---
 
 <div
-  class="md:px-8 px-6 py-6 bg-stone-800/0 hover:bg-stone-800 duration-200 ease-in-out rounded-md border-t border-stone-700/0 hover:border-stone-700 hover:shadow-md group/card md:not-hover:-translate-x-8 not-hover:-translate-x-6">
+  class="md:px-8 px-6 py-6 bg-stone-200/0 hover:bg-stone-200/50 dark:bg-stone-800/0 dark:hover:bg-stone-800 duration-200 ease-in-out rounded-md border-t border-stone-50/0 hover:border-stone-50 dark:border-stone-700/0 dark:hover:border-stone-700 hover:shadow-md group/card md:not-hover:-translate-x-8 not-hover:-translate-x-6">
   <a href={href} class="hover:cursor-pointer">
     <div class="space-y-2">
       <h3
-        class="text-md text-stone-300 font-semibold line-clamp-1 group-hover/card:text-indigo-300 duration-200 ease-in-out">
+        class="text-md text-stone-600 dark:text-stone-300 font-semibold group-hover/card:text-green-400 group-hover/card:dark:text-green-400 duration-200 ease-in-out">
         {title}
       </h3>
       <p class="line-clamp-2">
@@ -26,7 +26,7 @@ const { href, title, body, date } = Astro.props;
         date ? (
           <FormattedDate
             date={date}
-            className="text-sm text-stone-400 font-light"
+            className="text-sm text-stone-500 dark:text-stone-400 font-light"
           />
         ) : null
       }

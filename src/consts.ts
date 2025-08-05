@@ -3,31 +3,30 @@
 
 import type { Site, Socials, Metadata } from "./types";
 
-export const SITE_TITLE = "Apeiron Template";
-export const SITE_DESCRIPTION = "Welcome to my website!";
+export const SITE_TITLE = "Bradley Dettmer";
+export const SITE_DESCRIPTION = "Bradley's personal portfolio";
 
 export const SITE: Site = {
-  NAME: "Jane Doe",
-  EMAIL: "jane@doe.com",
+  NAME: "Bradley Dettmer",
+  EMAIL: "bdettmer@gmail.com",
 };
 
 export const HOME: Metadata = {
   TITLE: "Home",
-  DESCRIPTION: "Home page for my site",
+  DESCRIPTION: "Bradley Dettmer's personal portfolio",
 };
 
 export const WORK: Metadata = {
   TITLE: "Work",
-  DESCRIPTION: "An overview of the places I have worked",
+  DESCRIPTION: "Places Bradley Dettmer has worked",
 };
 
 export const PROJECTS: Metadata = {
   TITLE: "Projects",
-  DESCRIPTION: "A list of different projects I have worked on",
+  DESCRIPTION: "Different projects Bradley Dettmer has worked on",
 };
 
 export const SOCIALS: Socials = [
-  { NAME: "linkedin", HREF: "https://linkedin.com/#" },
-  { NAME: "github", HREF: "https://github.com/#" },
-  { NAME: "codepen", HREF: "https://codepen.io/#" },
+  { NAME: "linkedin", HREF: "https://www.linkedin.com/in/bdettmer/" },
+  { NAME: "github", HREF: "https://github.com/redslug" },
 ];

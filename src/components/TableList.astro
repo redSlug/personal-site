@@ -5,11 +5,13 @@ interface Props {
 const { list } = Astro.props;
 ---
 
-<ul class="divide-y-2 divide-stone-700">
+<ul class="divide-y-2 divide-stone-200 dark:divide-stone-700">
   {
     list.map((row) => (
       <li class="grid grid-cols-[1fr_2fr] gap-2 py-3">
-        <p class="font-semibold text-stone-300">{row.category}</p>
+        <p class="font-semibold text-stone-600 dark:text-stone-300">
+          {row.category}
+        </p>
         <p>{row.items}</p>
       </li>
     ))

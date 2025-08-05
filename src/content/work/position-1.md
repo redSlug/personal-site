@@ -1,8 +1,8 @@
 ---
-role: "Lorem Ipsum Engineer"
-organization: "Deleniti"
-location: "New York, NY"
-dateStart: "July 2024"
+role: "Recurser"
+organization: "Recurse Center"
+location: "Brooklyn, NY"
+dateStart: "January 2025"
 ---
 
 - Lorem ipsum dolor sit amet consectetur adipisicing elit.

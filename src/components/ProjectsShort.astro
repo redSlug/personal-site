@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import CardListWrapper from "./CardListWrapper.astro";
+import CardListItem from "./CardListItem.astro";
+import CardLong from "./CardLong.astro";
+
+const projects = await getCollection("projects");
+---
+
+<CardListWrapper>
+  {
+    projects.map((project) => {
+      if (project.data.priority === 1) {
+        return (
+          <CardListItem>
+            <CardLong
+              href={`/projects/${project.id}`}
+              title={project.data.title}
+              body={project.data?.description}
+              tags={project.data?.tags}
+              date={project.data?.date}
+            />
+          </CardListItem>
+        );
+      }
+    })
+  }
+</CardListWrapper>

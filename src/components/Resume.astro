@@ -11,7 +11,9 @@ const { role, organization, location, dateStart, dateEnd, body } = Astro.props;
 ---
 
 <div class="space-y-2 mb-16">
-  <h3 class="font-semibold text-lg text-stone-300">{role}</h3>
+  <h3 class="font-semibold text-lg text-stone-600 dark:text-stone-300">
+    {role}
+  </h3>
   <div class="flex justify-between font-light">
     <p>{organization} {location && <span>{"— " + location}</span>}</p>
     {
@@ -36,7 +38,7 @@ const { role, organization, location, dateStart, dateEnd, body } = Astro.props;
   </div>
 
   <ul
-    class="list-disc list-outside pl-4 marker:text-stone-700 space-y-2"
+    class="list-disc list-outside pl-4 marker:text-stone-400 dark:marker:text-stone-700 space-y-2"
     set:html={body?.substring(4, body.length - 5)}>
     {/* You can either directly insert a list into the body OR */}
     {/* you the body of the markdown file (which should be a list) */}

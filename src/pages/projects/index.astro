@@ -1,0 +1,42 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import H1 from "../../components/H1.astro";
+import Layout from "../../layouts/Base.astro";
+import Section from "../../components/Section.astro";
+import CardListItem from "../../components/CardListItem.astro";
+import CardListWrapper from "../../components/CardListWrapper.astro";
+import CardLong from "../../components/CardLong.astro";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => (a.data.priority ?? 0) - (b.data.priority ?? 0)
+);
+---
+
+<!doctype html>
+<Layout title={`${SITE_TITLE} | Projects`} description={SITE_DESCRIPTION}>
+  <Section>
+    <H1>Projects</H1>
+    <p>
+      Here are some projects I recently have recently worked on. I am always open to
+      collaborating, so please reach out if you want to
+      contribute or pair!
+    </p>
+  </Section>
+  <Section>
+    <CardListWrapper>
+      {
+        projects.map((project) => (
+          <CardListItem>
+            <CardLong
+              href={`/projects/${project.id}/`}
+              title={project.data.title}
+              body={project.data.description ?? ""}
+              tags={project.data.tags}
+            />
+          </CardListItem>
+        ))
+      }
+    </CardListWrapper>
+  </Section>
+</Layout>

@@ -25,6 +25,10 @@ const projects = defineCollection({
     tags: z.array(z.string()).optional(),
     // Transform string to Date object
     date: z.coerce.date().optional(),
+    description: z.string().optional(),
+    priority: z.number().optional(),
+    github: z.string().optional(),
+    heroImage: z.string().optional(),
   }),
 });
 
