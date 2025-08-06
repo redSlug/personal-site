@@ -1,7 +1,7 @@
 ---
 title: "Hot Takes"
 link: "https://www.youtube.com/watch?v=XtUc0Y7qqv0"
-priority: 2
+priority: 1
 tags:
   ["NextJS", "Turso", "Drizzle", "React",]
 description: "A social game of hot takes inspired by Kahreem Rahma's Subway Takes."
