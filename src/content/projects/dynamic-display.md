@@ -1,7 +1,7 @@
 ---
 title: "Dynamic Display"
 link: "https://dynamicdisplay.recurse.com/"
-priority: 2
+priority: 1
 tags:
   ["Python", "Docker", "Github Actions", "Digital Ocean", "nginx", "Alembic", "SQLite", "Raspberry pi", "LED hardware", "Gunicorn"]
 description: "Displaying Weather on a 32x16 LED Matrix."

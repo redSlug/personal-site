@@ -1,6 +1,6 @@
 ---
 title: "Git Playground"
-priority: 1
+priority: 2
 tags:
   ["git", "Python", "bash"]
 description: "An exploration of porting sample git hooks from shell to Python.
