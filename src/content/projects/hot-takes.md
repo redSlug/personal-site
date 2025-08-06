@@ -9,4 +9,4 @@ github: "https://github.com/redSlug/hot_takes"
 heroImage: "hot-takes.jpg"
 ---
 
-This game was a big hit at the Recurse Center. It was demoed in front of a crowd of about 50 people, and ~40 participated by sharing their hot takes.
+This game was a big hit at the Recurse Center. It was created in collaboration with [Jess Bacheldor](https://github.com/jbacheldor) and demoed in front of a crowd of about 50 people, and ~40 participated by sharing their hot takes.
