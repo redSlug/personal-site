@@ -7,16 +7,16 @@ import H1 from "../components/H1.astro";
 import H2 from "../components/H2.astro";
 import TableList from "../components/TableList.astro";
 import ProjectsShort from "../components/ProjectsShort.astro";
-import image from "../assets/headshot.jpg";
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <Section>
     <H1>Hello, I'm Bradley</H1>
     <Image
-      src={image}
+      src="https://bradley-dettmer.s3.us-east-2.amazonaws.com/bradley_copy.JPEG"
       alt="Bradley Dettmer in the forrest wearing a blue shirt"
       class="image-transition"
+      inferSize={true}
     />
 
     <p>
