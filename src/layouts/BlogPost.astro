@@ -3,44 +3,15 @@ import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import Layout from "../layouts/Base.astro";
 import H1 from "../components/H1.astro";
-import Link from "../components/Link.astro";
 import { SITE_TITLE } from "../consts";
-import { Image } from "astro:assets";
 
-type Props = CollectionEntry<"blog" | "projects">["data"];
+type Props = CollectionEntry<"blog">["data"];
 
 const title = Astro.props.title;
 const description = Astro.props.description ?? "";
 const pubDate = (Astro.props as any).pubDate ?? (Astro.props as any).date;
 const updatedDate = (Astro.props as any).updatedDate;
-const heroImage = (Astro.props as any).heroImage;
-const github = (Astro.props as any).github;
-const link = (Astro.props as any).link;
 
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/*.{jpeg,jpg,png,gif,webp,svg}",
-  { eager: true }
-);
-
-function getImageByName(imageName: string) {
-  if (!imageName) return null;
-
-  const possiblePaths = [
-    `/src/assets/${imageName}`,
-    `/src/assets/images/${imageName}`,
-    `/src/assets/projects/${imageName}`,
-  ];
-
-  for (const path of possiblePaths) {
-    if (images[path]) {
-      return images[path].default;
-    }
-  }
-
-  return null;
-}
-
-const matchedImage = heroImage ? getImageByName(heroImage) : null;
 ---
 
 <Layout title={`${SITE_TITLE} | ${title}`} description={description}>
@@ -51,28 +22,6 @@ const matchedImage = heroImage ? getImageByName(heroImage) : null;
       <p class="text-stone-700 dark:text-stone-400 italic text-md">
         {description}
       </p>
-      <div class="flex gap-2">
-        {
-          github && (
-            <Link
-              href={github}
-              iconClass="ph-fill ph-github-logo"
-              text="GitHub"
-              ariaLabel="View on GitHub"
-            />
-          )
-        }
-        {
-          link && (
-            <Link
-              href={link}
-              iconClass="ph-fill ph-arrow-square-out "
-              text="Demo"
-              ariaLabel="View live demo"
-            />
-          )
-        }
-      </div>
       {
         pubDate && (
           <div class="date my-4">
@@ -94,21 +43,51 @@ const matchedImage = heroImage ? getImageByName(heroImage) : null;
 
     <div
       class="prose prose-stone prose-h1:text-green-400 prose-headings:text-stone-700 prose-p:text-stone-600 prose-a:no-underline prose-a:text-green-400 prose-a:hover:underline dark:prose-invert dark:prose-h1:text-green-400 dark:prose-headings:text-stone-300 dark:prose-p:text-stone-300/80 dark:prose-a:text-green-400 dark:prose-a:hover:underline">
-      {
-        matchedImage && (
-          <div class="hero-image">
-            <Image
-              class="image-transition"
-              src={matchedImage}
-              alt={`Hero image for ${title}`}
-              width={1000}
-              height={500}
-              format="webp"
-            />
-          </div>
-        )
-      }
       <slot />
     </div>
+
+    <style>
+      #graphcomment {
+        min-height: 341px;
+      }
+      @media (min-width: 501px) {
+        #graphcomment {
+          min-height: 304px;
+        }
+      }
+      @media (min-width: 600px) {
+        #graphcomment {
+          min-height: 286px;
+        }
+      }
+    </style>
+    <div id="graphcomment" class="mt-8"></div>
+    <script is:inline define:vars={{ slug: Astro.url.pathname }}>
+      var __semio__params = {
+        graphcommentId: "Bradley-Dettmer",
+        behaviour: {
+          uid: slug,
+        },
+      };
+
+      function __semio__onload() {
+        __semio__gc_graphlogin(__semio__params);
+      }
+
+      (function () {
+        var gc = document.createElement("script");
+        gc.type = "text/javascript";
+        gc.async = true;
+        gc.onload = __semio__onload;
+        gc.defer = true;
+        gc.src =
+          "https://integration.graphcomment.com/gc_graphlogin.js?" +
+          Date.now();
+        (
+          document.getElementsByTagName("head")[0] ||
+          document.getElementsByTagName("body")[0]
+        ).appendChild(gc);
+      })();
+    </script>
   </article>
 </Layout>

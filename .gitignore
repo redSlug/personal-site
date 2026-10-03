@@ -16,6 +16,7 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.r2.env
 
 # macOS-specific files
 .DS_Store
@@ -25,3 +26,5 @@ pnpm-debug.log*
 
 # misc.
 tasks.md
+blog_logo_rect.png
+blog_logo_square.png

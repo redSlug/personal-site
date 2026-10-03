@@ -1,13 +1,13 @@
 ---
 title: "Tiles"
 link: "https://redslug.github.io/tiles/"
-priority: 1
+priority: 2
 tags:
   ["TypeScript", "React", "PeerJS", "WebSockets", "WebRTC"]
 image:
 description: A multiplayer Azul-Inspired Game implemented using PeerJS and WebRTC.
 github: "https://github.com/redslug/tiles"
-heroImage: "tiles.png"
+heroImage: "https://images.bradleydettmer.me/projects/tiles.png"
 ---
 
 Tiles is Multiplayer Azul-Inspired game implemented using PeerJS and WebRTC. 

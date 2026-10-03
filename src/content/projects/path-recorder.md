@@ -6,7 +6,7 @@ tags:
   ["iOS", "Swift", "CoreLocation", "SwiftData", "MapKit", "AVCapture"]
 description: "Available for iOS in the AppStore, Path Recorder is your personal travel companion that maps your journey in real-time."
 github: "https://github.com/redSlug/PathRecorder"
-heroImage: "path-recorder.png"
+heroImage: "https://images.bradleydettmer.me/projects/path-recorder.png"
 ---
 
 Turn every step into a story.

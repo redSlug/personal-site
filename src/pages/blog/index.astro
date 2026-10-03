@@ -1,16 +1,14 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
-import { getCollection } from "astro:content";
 import H1 from "../../components/H1.astro";
 import Layout from "../../layouts/Base.astro";
 import Section from "../../components/Section.astro";
 import Card from "../../components/Card.astro";
 import CardListItem from "../../components/CardListItem.astro";
 import CardListWrapper from "../../components/CardListWrapper.astro";
+import { getBlogPosts } from "../../utils/blog";
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const posts = await getBlogPosts();
 ---
 
 <!doctype html>
@@ -18,10 +16,7 @@ const posts = (await getCollection("blog")).sort(
   <Section>
     <H1>Blog</H1>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
-      veritatis vitae. Delectus, autem facere distinctio possimus tempora qui
-      perspiciatis incidunt, laborum exercitationem porro quam, voluptatum
-      earum. Atque ipsum vitae suscipit?
+      Recent musings.
     </p>
   </Section>
   <Section>

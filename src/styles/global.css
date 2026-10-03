@@ -5,3 +5,22 @@
 .image-transition {
   @apply rounded-md grayscale hover:grayscale-0 duration-400 ease-in-out border-t border-stone-50/0 hover:border-stone-50/100 dark:border-stone-700/0 dark:hover:border-stone-700 hover:shadow-md my-4;
 }
+
+.post-image {
+  @apply my-4;
+}
+
+.post-image figcaption {
+  @apply text-center text-sm italic text-stone-500 dark:text-stone-400 mt-1;
+}
+
+.image-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  @apply my-4;
+}
+
+.image-row .post-image {
+  @apply my-0;
+}
