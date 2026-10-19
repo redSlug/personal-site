@@ -34,6 +34,10 @@ const updatedDate = (Astro.props as any).updatedDate;
                 Last updated on <FormattedDate date={updatedDate} />
               </div>
             )}
+            <span
+              id="view-count"
+              class="text-stone-700 dark:text-stone-400 text-sm font-light"
+            />
           </div>
         )
       }
@@ -61,6 +65,20 @@ const updatedDate = (Astro.props as any).updatedDate;
         }
       }
     </style>
+    <script is:inline>
+      fetch(
+        `https://bdettmer.goatcounter.com/counter/${encodeURIComponent(location.pathname)}.json`,
+      )
+        .then((r) => (r.ok ? r.json() : null))
+        .then((data) => {
+          if (data) {
+            document.getElementById("view-count").textContent =
+              ` · ${data.count} views`;
+          }
+        })
+        .catch(() => {});
+    </script>
+
     <div id="graphcomment" class="mt-8"></div>
     <script is:inline define:vars={{ slug: Astro.url.pathname }}>
       var __semio__params = {

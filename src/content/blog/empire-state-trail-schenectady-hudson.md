@@ -87,7 +87,7 @@ Years later, the friend changed their mind, decided to take up biking again and 
 
 (For what it's worth, everyone I ask has a different take. I'm always curious how people define ownership. Two people told me it's definitely mine now—one even suggested I repaint it! 
 A dear friend said it's a no-brainer to return it if the friend ever reappeared. 
-Personally, I still love that friend, and if they asked for the bike back I would hesitate and explain the upgrades I put into it, but I would probably give it back.)
+Personally, I still care about that friend, and if they asked for the bike back I would hesitate and explain the upgrades I put into it, but I would probably give it back.)
 
 Maira replaced both cable casings in 20 minutes, gave me her phone number in case I ran into trouble further down the trail, and offered some solid parting advice:
 
