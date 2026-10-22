@@ -3,20 +3,32 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "predev": "npm run faq:build",
+    "dev": "node --env-file-if-exists=.env node_modules/astro/astro.js dev",
+    "prebuild": "npm run faq:build",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "faq:build": "node scripts/build-faq-index.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.3.0",
+    "@astrojs/vercel": "^9.0.5",
+    "@huggingface/transformers": "^4.3.1",
     "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.6.2",
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16"
+  },
+  "allowScripts": {
+    "esbuild@0.25.2": true,
+    "fsevents@2.3.3": true,
+    "onnxruntime-node@1.30.0": true,
+    "protobufjs@7.6.6": true,
+    "sharp@0.33.5": true
   }
 }

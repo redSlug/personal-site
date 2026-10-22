@@ -1,4 +1,4 @@
-import { glob } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
@@ -47,4 +47,16 @@ const work = defineCollection({
   }),
 });
 
-export const collections = { blog, work, projects };
+const faq = defineCollection({
+  // Curated FAQ entries for the /ask chat — see scripts/build-faq-index.ts.
+  // Each entry has several example phrasings ("questions") that all map to
+  // one curated "answer".
+  loader: file("./src/content/faq.json"),
+  schema: z.object({
+    questions: z.array(z.string()).min(1),
+    answer: z.string(),
+    url: z.string().optional(),
+  }),
+});
+
+export const collections = { blog, work, projects, faq };

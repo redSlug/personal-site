@@ -1,0 +1,262 @@
+[
+  {
+    "id": "greeting",
+    "questions": [
+      "Hi",
+      "Hello",
+      "Hey there"
+    ],
+    "answer": "Hi! Ask me about Bradley's projects, the technologies he works with, or how to get in touch.",
+    "url": "/"
+  },
+  {
+    "id": "who-are-you",
+    "questions": [
+      "Who are you?",
+      "Who is Bradley?",
+      "Who is Bradley Dettmer?",
+      "Tell me about yourself",
+      "Tell me about Bradley",
+      "What do you do?",
+      "What does Bradley do?"
+    ],
+    "answer": "Bradley Dettmer is an infrastructure and backend engineer who also builds web, mobile, and hardware side projects — see the Projects page for examples.",
+    "url": "/projects"
+  },
+  {
+    "id": "background",
+    "questions": [
+      "What's your background?",
+      "What's Bradley's background?",
+      "What kind of engineer are you?",
+      "What kind of engineer is Bradley?"
+    ],
+    "answer": "Bradley's experience centers on backend and infrastructure, and also spans web development, mobile apps, and hardware/LED projects. See the Projects page for some of his side projects.",
+    "url": "/projects"
+  },
+  {
+    "id": "what-projects",
+    "questions": [
+      "What projects have you built?",
+      "What has Bradley built?",
+      "What has he built?",
+      "Show me your portfolio",
+      "What have you made?"
+    ],
+    "answer": "For fun, Bradley has built a range of things: web games like Tiles (multiplayer, peer-to-peer, built with WebRTC), hardware projects like Dynamic Display (weather on a Raspberry Pi LED grid), mobile apps for iOS and Android (Path Recorder, Count in Japanese), and social/web apps like Hot Takes and Yoga With Friends.",
+    "url": "/projects"
+  },
+  {
+    "id": "tiles-project",
+    "questions": [
+      "Tell me about Tiles",
+      "What is Tiles?",
+      "What's the Azul game you built?",
+      "What's the Azul game Bradley built?"
+    ],
+    "answer": "Tiles is a multiplayer, Azul-inspired game built with PeerJS and WebRTC. Players connect directly to each other peer-to-peer, so there's no dedicated game server.",
+    "url": "/projects/tiles"
+  },
+  {
+    "id": "dynamic-display-project",
+    "questions": [
+      "Tell me about Dynamic Display",
+      "What is Dynamic Display?",
+      "What's the weather display project?"
+    ],
+    "answer": "Dynamic Display renders the current weather onto a 32x16 LED matrix, built with Python running on a Raspberry Pi.",
+    "url": "/projects/dynamic-display"
+  },
+  {
+    "id": "hot-takes-project",
+    "questions": [
+      "Tell me about Hot Takes",
+      "What is Hot Takes?"
+    ],
+    "answer": "Hot Takes is a social web app built with React and Next.js.",
+    "url": "/projects/hot-takes"
+  },
+  {
+    "id": "yoga-with-friends-project",
+    "questions": [
+      "Tell me about Yoga With Friends",
+      "What is Yoga With Friends?"
+    ],
+    "answer": "Yoga With Friends has a web version built with React and Next.js, a Python backend deployed with Docker, and a Raspberry Pi LED matrix display.",
+    "url": "/projects/yoga-with-friends"
+  },
+  {
+    "id": "path-recorder-project",
+    "questions": [
+      "Tell me about Path Recorder",
+      "What is Path Recorder?"
+    ],
+    "answer": "Path Recorder is a travel-journaling app for iOS, written in Swift and available on the App Store.",
+    "url": "/projects/path-recorder"
+  },
+  {
+    "id": "count-in-japanese-project",
+    "questions": [
+      "Tell me about Count in Japanese",
+      "What is Count in Japanese?"
+    ],
+    "answer": "Count in Japanese is a mobile app available on both the App Store and Google Play.",
+    "url": "/projects/count-in-japanese"
+  },
+  {
+    "id": "favorite-project",
+    "questions": [
+      "What's your favorite project?",
+      "Which project are you most proud of?",
+      "Tell me about his strongest project",
+      "What's his strongest project?"
+    ],
+    "answer": "Hard to pick one — Tiles for the real-time networking challenge, Dynamic Display for the hardware side. Check out the Projects page and judge for yourself!",
+    "url": "/projects"
+  },
+  {
+    "id": "mobile-apps",
+    "questions": [
+      "Do you have any mobile apps?",
+      "Does Bradley have any mobile apps?",
+      "Have you built anything for iOS or Android?",
+      "Are you on the App Store?"
+    ],
+    "answer": "Yes — Count in Japanese is available on both the App Store and Google Play, and Path Recorder (iOS, Swift) is a travel-journaling app on the App Store.",
+    "url": "/projects"
+  },
+  {
+    "id": "tech-stack",
+    "questions": [
+      "What technologies do you know?",
+      "What's your tech stack?",
+      "What's Bradley's tech stack?",
+      "What tools do you use?",
+      "What frameworks do you use?"
+    ],
+    "answer": "Bradley works mostly on backend and infrastructure. Languages: Python and Kotlin, plus some Go, Rust, and others. Tools: Docker, Terraform, Bash, GitHub Actions for CI/CD, and DigitalOcean, Google Cloud, and AWS. He also builds web frontends in TypeScript with React and Next.js, and mobile apps in Swift and Kotlin.",
+    "url": "/projects"
+  },
+  {
+    "id": "programming-languages",
+    "questions": [
+      "What programming languages do you know?",
+      "What languages do you code in?",
+      "What languages does he know?",
+      "What languages does Bradley know?"
+    ],
+    "answer": "Bradley is a polyglot who works mostly in Python and Kotlin on the backend, with some Go and Rust. He also uses TypeScript for the web, Swift for iOS, and Kotlin for Android.",
+    "url": "/projects"
+  },
+  {
+    "id": "frontend-experience",
+    "questions": [
+      "Do you have frontend experience?",
+      "Do you know React?",
+      "Does Bradley know React?",
+      "Have you built web apps?"
+    ],
+    "answer": "Yes — several projects use React and Next.js, including Hot Takes and the web version of Yoga With Friends.",
+    "url": "/projects"
+  },
+  {
+    "id": "backend-experience",
+    "questions": [
+      "Do you have backend experience?",
+      "Does Bradley have backend experience?",
+      "Have you worked with infrastructure or deployment?",
+      "Do you know Docker?"
+    ],
+    "answer": "Yes — projects like Dynamic Display and Yoga With Friends involve Python backends, Docker, and cloud deployment on DigitalOcean, Google Cloud, and AWS, with GitHub Actions for CI/CD.",
+    "url": "/projects"
+  },
+  {
+    "id": "hardware-experience",
+    "questions": [
+      "Do you have hardware experience?",
+      "Does Bradley have hardware experience?",
+      "Have you worked with Raspberry Pi?",
+      "Do you build physical/IoT projects?",
+      "What are your LED projects?",
+      "What's the LED project?"
+    ],
+    "answer": "Yes — Dynamic Display and Yoga With Friends both run on Raspberry Pi LED matrix displays, combining Python backends with physical hardware.",
+    "url": "/projects"
+  },
+  {
+    "id": "work-experience",
+    "questions": [
+      "What's your work experience?",
+      "What's your experience as an engineer?",
+      "Where have you worked?",
+      "Where has Bradley worked?",
+      "What's your job history?"
+    ],
+    "answer": "Bradley has worked in tech for many years — his LinkedIn, linked in the footer, has his professional history. This assistant focuses on his personal projects.",
+    "url": "/"
+  },
+  {
+    "id": "should-hire",
+    "questions": [
+      "Should I hire you?",
+      "Should I hire Bradley?",
+      "Are you a good hire?",
+      "Why should I hire you?"
+    ],
+    "answer": "Yes — Bradley has shipped working projects across a wide range of stacks: backend/infra, web, mobile, and even hardware. That range, plus a habit of actually finishing and shipping side projects, makes him a strong hire. You can reach him through the contact links in the footer.",
+    "url": "/"
+  },
+  {
+    "id": "contact",
+    "questions": [
+      "How can I contact you?",
+      "How can I contact Bradley?",
+      "What's your email?",
+      "How do I reach you?"
+    ],
+    "answer": "Use the contact icons in the footer of this site — email, LinkedIn, GitHub, and more.",
+    "url": "/"
+  },
+  {
+    "id": "linkedin-github",
+    "questions": [
+      "Are you on LinkedIn?",
+      "Do you have a GitHub?",
+      "Where can I see your code?",
+      "Where can I see Bradley's code?"
+    ],
+    "answer": "Yes — links to LinkedIn, GitHub, and Medium are in the footer of this site.",
+    "url": "/"
+  },
+  {
+    "id": "blog",
+    "questions": [
+      "Do you have a blog?",
+      "Does Bradley have a blog?",
+      "What do you write about?"
+    ],
+    "answer": "Yes — Bradley's blog includes posts like a guide to biking the Empire State Trail from Schenectady to Hudson.",
+    "url": "/blog"
+  },
+  {
+    "id": "biking-trip",
+    "questions": [
+      "Tell me about your biking trip",
+      "Have you biked the Empire State Trail?",
+      "Tell me about the Empire State Trail ride"
+    ],
+    "answer": "Bradley biked the Empire State Trail from Schenectady to Hudson and wrote it up on his blog, with tips for other riders.",
+    "url": "/blog"
+  },
+  {
+    "id": "location",
+    "questions": [
+      "Where are you based?",
+      "Where is Bradley based?",
+      "Where do you live?",
+      "What city are you in?"
+    ],
+    "answer": "Bradley is based in Brooklyn, New York.",
+    "url": "/"
+  }
+]

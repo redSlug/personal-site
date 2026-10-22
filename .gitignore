@@ -1,5 +1,9 @@
 # build output
 dist/
+.vercel/
+
+# generated at build time, see scripts/build-faq-index.ts
+public/faq-index.json
 # generated types
 .astro/
 

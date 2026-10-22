@@ -26,6 +26,11 @@ export const PROJECTS: Metadata = {
   DESCRIPTION: "Different projects Bradley Dettmer has worked on",
 };
 
+export const ASK: Metadata = {
+  TITLE: "Ask",
+  DESCRIPTION: "Ask a curated FAQ chat about Bradley Dettmer, running entirely in your browser",
+};
+
 export const SOCIALS: Socials = [
   { NAME: "linkedin", HREF: "https://www.linkedin.com/in/bdettmer/" },
   { NAME: "github", HREF: "https://github.com/redslug" },
