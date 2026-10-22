@@ -1,0 +1,226 @@
+---
+import Layout from "../layouts/Base.astro";
+import H1 from "../components/H1.astro";
+import Section from "../components/Section.astro";
+import { ASK } from "../consts";
+---
+
+<Layout title={ASK.TITLE} description={ASK.DESCRIPTION}>
+  <Section>
+    <H1>Ask</H1>
+    <p>
+      Ask a question about Bradley.
+      <a href="/blog/a-tiny-ai-model-in-your-browser" class="underline">Read how this page works</a>.
+    </p>
+
+    <div class="space-y-4">
+      <button
+        id="load-button"
+        class="rounded-lg bg-green-400 px-4 py-2 font-semibold text-stone-900 hover:opacity-90 disabled:opacity-50">
+        Start chat
+      </button>
+      <p id="status" class="text-sm italic"></p>
+
+      <div
+        id="transcript"
+        class="space-y-4 max-h-[50vh] overflow-y-auto rounded-lg border border-stone-300 dark:border-stone-700 p-4">
+      </div>
+
+      <form id="ask-form" class="flex gap-2">
+        <input
+          id="question"
+          type="text"
+          autocomplete="off"
+          placeholder="What has Bradley built?"
+          disabled
+          class="flex-1 rounded-lg border border-stone-300 dark:border-stone-700 bg-transparent px-3 py-2 disabled:opacity-50"
+        />
+        <button
+          id="send-button"
+          type="submit"
+          disabled
+          class="rounded-lg bg-green-400 px-4 py-2 font-semibold text-stone-900 hover:opacity-90 disabled:opacity-50">
+          Send
+        </button>
+      </form>
+    </div>
+  </Section>
+</Layout>
+
+<script>
+  import { pipeline } from "@huggingface/transformers";
+  import { SITE } from "../consts";
+
+  const EMBEDDING_MODEL = "Xenova/all-MiniLM-L6-v2";
+
+  // Cosine similarity above which an embedding match is considered confident
+  // enough to answer from. Curated question variants tend to score well above
+  // this for a real paraphrase; unrelated questions score well below it.
+  const CONFIDENCE_THRESHOLD = 0.6;
+
+  // Word-overlap ratio above which the keyword fallback (used only if the
+  // embedding model fails to load) is considered a confident match.
+  const KEYWORD_THRESHOLD = 0.5;
+
+  const FALLBACK_MESSAGE = `I can only answer questions about ${SITE.NAME} — try rephrasing, or check out the Projects and Blog pages.`;
+
+  type FaqRow = {
+    id: string;
+    question: string;
+    answer: string;
+    url: string;
+    embedding: number[];
+  };
+
+  const loadButton = document.getElementById("load-button") as HTMLButtonElement;
+  const statusEl = document.getElementById("status")!;
+  const transcriptEl = document.getElementById("transcript")!;
+  const formEl = document.getElementById("ask-form") as HTMLFormElement;
+  const questionEl = document.getElementById("question") as HTMLInputElement;
+  const sendButton = document.getElementById("send-button") as HTMLButtonElement;
+
+  function cosineSimilarity(a: number[], b: number[]) {
+    let dot = 0;
+    for (let i = 0; i < a.length; i++) dot += a[i] * b[i];
+    return dot; // both vectors are already normalized
+  }
+
+  // Fire-and-forget: lets us see what visitors are asking without blocking
+  // the chat UI or surfacing a failure if logging itself has a problem.
+  function logQuestion(question: string, matched: boolean) {
+    fetch("/api/log-question", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question, matched }),
+    }).catch(() => {});
+  }
+
+  function addMessage(role: "user" | "assistant", text: string) {
+    const el = document.createElement("div");
+    el.className =
+      role === "user"
+        ? "text-stone-900 dark:text-stone-100 font-medium"
+        : "text-stone-600 dark:text-stone-400";
+    el.textContent = (role === "user" ? "You: " : "Assistant: ") + text;
+    transcriptEl.appendChild(el);
+    transcriptEl.scrollTop = transcriptEl.scrollHeight;
+    return el;
+  }
+
+  function addSource(row: FaqRow) {
+    if (!row.url) return;
+    const el = document.createElement("div");
+    el.className = "text-sm";
+    const link = document.createElement("a");
+    link.href = row.url;
+    link.textContent = row.question;
+    link.className = "underline text-green-400 dark:text-green-400";
+    el.appendChild(link);
+    transcriptEl.appendChild(el);
+  }
+
+  const STOPWORDS = new Set([
+    "a", "an", "the", "is", "are", "do", "does", "you", "your", "i", "to",
+    "of", "what", "who", "how", "have", "has", "for", "on", "in", "me", "my",
+  ]);
+
+  function tokenize(text: string): Set<string> {
+    return new Set(
+      text
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, "")
+        .split(/\s+/)
+        .filter((w) => w && !STOPWORDS.has(w))
+    );
+  }
+
+  // Fallback used only if the embedding model fails to load (e.g. network
+  // issue, unsupported browser): plain word-overlap against each FAQ row's
+  // question text instead of semantic similarity.
+  function keywordMatch(question: string, faqIndex: FaqRow[]): { row: FaqRow; score: number } | null {
+    const queryWords = tokenize(question);
+    if (queryWords.size === 0) return null;
+
+    let best: { row: FaqRow; score: number } | null = null;
+    for (const row of faqIndex) {
+      const rowWords = tokenize(row.question);
+      const intersection = [...queryWords].filter((w) => rowWords.has(w)).length;
+      const union = new Set([...queryWords, ...rowWords]).size;
+      const score = union === 0 ? 0 : intersection / union;
+      if (!best || score > best.score) best = { row, score };
+    }
+    return best;
+  }
+
+  loadButton.addEventListener("click", async () => {
+    loadButton.disabled = true;
+    statusEl.textContent = "Loading FAQ index...";
+
+    let faqIndex: FaqRow[];
+    try {
+      faqIndex = await fetch("/faq-index.json").then((r) => r.json());
+    } catch (err) {
+      console.error(err);
+      statusEl.textContent =
+        "Failed to load: " + (err instanceof Error ? err.message : String(err));
+      loadButton.disabled = false;
+      return;
+    }
+
+    // If the embedding model fails to load, fall back to simple keyword
+    // matching rather than blocking the chat entirely.
+    let embedder: Awaited<ReturnType<typeof pipeline>> | null = null;
+    try {
+      statusEl.textContent = "Loading embedding model...";
+      embedder = await pipeline("feature-extraction", EMBEDDING_MODEL);
+      statusEl.textContent = "Ready.";
+    } catch (err) {
+      console.error(err);
+      statusEl.textContent = "Ready (using simple keyword matching — the embedding model failed to load).";
+    }
+
+    loadButton.classList.add("hidden");
+    questionEl.disabled = false;
+    sendButton.disabled = false;
+    questionEl.focus();
+
+    formEl.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const question = questionEl.value.trim();
+      if (!question) return;
+
+      questionEl.value = "";
+      questionEl.disabled = true;
+      sendButton.disabled = true;
+      addMessage("user", question);
+
+      let match: { row: FaqRow; score: number } | null = null;
+      let threshold = KEYWORD_THRESHOLD;
+
+      if (embedder) {
+        const queryEmbedding = await embedder(question, { pooling: "mean", normalize: true });
+        const queryVector = Array.from(queryEmbedding.data) as number[];
+        match = faqIndex
+          .map((row) => ({ row, score: cosineSimilarity(queryVector, row.embedding) }))
+          .sort((a, b) => b.score - a.score)[0] ?? null;
+        threshold = CONFIDENCE_THRESHOLD;
+      } else {
+        match = keywordMatch(question, faqIndex);
+      }
+
+      const isMatch = !!match && match.score >= threshold;
+      logQuestion(question, isMatch);
+
+      if (isMatch && match) {
+        addMessage("assistant", match.row.answer);
+        addSource(match.row);
+      } else {
+        addMessage("assistant", FALLBACK_MESSAGE);
+      }
+
+      questionEl.disabled = false;
+      sendButton.disabled = false;
+      questionEl.focus();
+    });
+  });
+</script>
