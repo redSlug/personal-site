@@ -200,6 +200,7 @@
     "questions": [
       "Should I hire you?",
       "Should I hire Bradley?",
+      "Should I hire him?",
       "Are you a good hire?",
       "Why should I hire you?"
     ],
@@ -258,5 +259,97 @@
     ],
     "answer": "Bradley is based in Brooklyn, New York.",
     "url": "/"
+  },
+  {
+    "id": "origin",
+    "questions": [
+      "Where is he from?",
+      "Where is Bradley from?",
+      "Where is Bradley originally from?"
+    ],
+    "answer": "Bradley is originally from California, but has been living in NYC for over a decade."
+  },
+  {
+    "id": "is-from-texas",
+    "questions": [
+      "Is Bradley from Texas?",
+      "Are you from Texas?"
+    ],
+    "answer": "No, Bradley is not from Texas, but he has been there a couple of times."
+  },
+  {
+    "id": "favorite-activity",
+    "questions": [
+      "What is Bradley's favorite thing to do?",
+      "What's your favorite thing to do?"
+    ],
+    "answer": "These days, Bradley's favorite thing to do is ride his bike!"
+  },
+  {
+    "id": "favorite-food-to-eat",
+    "questions": [
+      "What does Bradley like to eat?",
+      "What do you like to eat?"
+    ],
+    "answer": "Bradley likes to eat sushi!"
+  },
+  {
+    "id": "favorite-food",
+    "questions": [
+      "What is Bradley's favorite food?",
+      "What's your favorite food?"
+    ],
+    "answer": "Bradley's favorite food is pumpkin ice cream!"
+  },
+  {
+    "id": "favorite-soup",
+    "questions": [
+      "What is Bradley's favorite soup?",
+      "What's your favorite soup?"
+    ],
+    "answer": "Bradley likes African peanut stew."
+  },
+  {
+    "id": "hobbies",
+    "questions": [
+      "What does Bradley do for fun?",
+      "What do you do for fun?",
+      "What are Bradley's hobbies?"
+    ],
+    "answer": "Bradley likes running, biking, hiking, going to the beach, hanging out with friends, pair programming, and much more!"
+  },
+  {
+    "id": "can-program",
+    "questions": [
+      "Can Bradley program?",
+      "Can you program?",
+      "Can you code?"
+    ],
+    "answer": "Yes, Bradley can code and does it for fun!"
+  },
+  {
+    "id": "pronouns",
+    "questions": [
+      "What are Bradley's pronouns?",
+      "What are your pronouns?"
+    ],
+    "answer": "Bradley uses they/them and he/him."
+  },
+  {
+    "id": "favorite-color",
+    "questions": [
+      "What's Bradley's favorite color?",
+      "What's your favorite color?"
+    ],
+    "answer": "Green."
+  },
+  {
+    "id": "laughing",
+    "questions": [
+      "hahahah",
+      "haha",
+      "lol"
+    ],
+    "answer": "Thank you! I may be a tiny AI stuck inside your device, but I can be a little funny sometimes."
   }
 ]
