@@ -39,13 +39,27 @@ export const POST: APIRoute = async ({ request }) => {
   const prefix = IS_DEV_ENV ? "[dev] " : "";
   const content = `${prefix}**Question** (${matchedLabel}): ${question}`;
 
-  const discordResponse = await fetch(DISCORD_WEBHOOK_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ content }),
-  });
-
-  if (!discordResponse.ok) {
+  // Logging a question should never break the Ask page for the visitor, so a
+  // network failure here (Discord down, DNS/connectivity issue, timeout) is
+  // caught rather than left to throw — which would otherwise surface as an
+  // unhandled rejection and crash this route. The client already ignores
+  // this endpoint's response (fire-and-forget), so returning an error status
+  // on failure doesn't hide anything from a visitor they'd otherwise see —
+  // but it does keep the response honest for anything else that might check
+  // it later (manual curl, a health check, etc.), rather than claiming
+  // success when the question never actually reached Discord.
+  try {
+    const discordResponse = await fetch(DISCORD_WEBHOOK_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content }),
+    });
+    if (!discordResponse.ok) {
+      console.error(`[log-question] Discord webhook returned ${discordResponse.status}`);
+      return new Response("Failed to forward", { status: 502 });
+    }
+  } catch (err) {
+    console.error("[log-question] Failed to reach Discord:", err);
     return new Response("Failed to forward", { status: 502 });
   }
 

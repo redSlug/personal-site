@@ -66,7 +66,7 @@ import { ASK } from "../consts";
   // embedding model fails to load) is considered a confident match.
   const KEYWORD_THRESHOLD = 0.5;
 
-  const FALLBACK_MESSAGE = `I can only answer questions about ${SITE.NAME} — try rephrasing, or check out the Projects and Blog pages.`;
+  const FALLBACK_MESSAGE = `I can only answer questions about ${SITE.NAME} based on what I know. Try rephrasing, or check out the Projects and Blog pages.`;
 
   type FaqRow = {
     id: string;
