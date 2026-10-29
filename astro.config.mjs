@@ -9,7 +9,17 @@ import rehypeImageCaptions from "./src/plugins/rehype-image-captions.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://bradleydettmer.me",
+  site: "https://www.bradleydettmer.me",
+  redirects: {
+    "/blog/mountain-biking-china-camp": {
+      status: 308,
+      destination: "/blog/mountain-biking-china-camp-state-park/",
+    },
+    "/blog/mountain-biking-china-camp/": {
+      status: 308,
+      destination: "/blog/mountain-biking-china-camp-state-park/",
+    },
+  },
   // Site stays static by default; src/pages/api/log-question.ts opts into
   // on-demand rendering (export const prerender = false) since it needs to
   // run server-side on every request.

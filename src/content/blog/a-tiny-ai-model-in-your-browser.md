@@ -30,4 +30,6 @@ Once this was live, I wanted to know what people were asking so I could keep the
 
 So if you ask something on the Ask page, I'll see it, which means don't type anything you wouldn't want me to read.
 
+Try it: [Ask page](/ask).
+
 

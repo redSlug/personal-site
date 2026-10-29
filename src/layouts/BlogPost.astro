@@ -11,10 +11,11 @@ const title = Astro.props.title;
 const description = Astro.props.description ?? "";
 const pubDate = (Astro.props as any).pubDate ?? (Astro.props as any).date;
 const updatedDate = (Astro.props as any).updatedDate;
+const heroImage = (Astro.props as any).heroImage;
 
 ---
 
-<Layout title={`${SITE_TITLE} | ${title}`} description={description}>
+<Layout title={`${SITE_TITLE} | ${title}`} description={description} image={heroImage}>
   <article class="my-16">
     <div class="title space-y-4">
       <H1>{title}</H1>
