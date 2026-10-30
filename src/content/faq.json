@@ -4,10 +4,12 @@
     "questions": [
       "Hi",
       "Hello",
-      "Hey there"
+      "Hey there",
+      "yo",
+      "what up",
+      "hmm"
     ],
-    "answer": "Hi! Ask me about Bradley's projects, the technologies he works with, or how to get in touch.",
-    "url": "/"
+    "answer": "Hi! Ask me about Bradley's projects, the technologies he works with, or how to get in touch."
   },
   {
     "id": "who-are-you",
@@ -18,9 +20,19 @@
       "Tell me about yourself",
       "Tell me about Bradley",
       "What do you do?",
-      "What does Bradley do?"
+      "What does Bradley do?",
+      "Who is brad",
+      "who is brad!!!!!",
+      "Who is Brad?",
+      "Who is Brad Dettmer?",
+      "Who's Brad?",
+      "Who is he?",
+      "What does Bradley do for work?",
+      "What does he do for work?",
+      "What do you do for work?",
+      "What is Bradley's job?"
     ],
-    "answer": "Bradley Dettmer is an infrastructure and backend engineer who also builds web, mobile, and hardware side projects — see the Projects page for examples.",
+    "answer": "Bradley Dettmer is an infrastructure and backend engineer who also builds web, mobile, and hardware side projects, like Tiles (a peer-to-peer multiplayer game), Dynamic Display (weather on a Raspberry Pi LED matrix), Path Recorder (an iOS travel journal), and Count in Japanese (an iOS and Android app). See the Projects page for more.",
     "url": "/projects"
   },
   {
@@ -41,7 +53,9 @@
       "What has Bradley built?",
       "What has he built?",
       "Show me your portfolio",
-      "What have you made?"
+      "What have you made?",
+      "what has bradley built?",
+      "What has Brad built?"
     ],
     "answer": "For fun, Bradley has built a range of things: web games like Tiles (multiplayer, peer-to-peer, built with WebRTC), hardware projects like Dynamic Display (weather on a Raspberry Pi LED grid), mobile apps for iOS and Android (Path Recorder, Count in Japanese), and social/web apps like Hot Takes and Yoga With Friends.",
     "url": "/projects"
@@ -126,7 +140,7 @@
       "Are you on the App Store?"
     ],
     "answer": "Yes — Count in Japanese is available on both the App Store and Google Play, and Path Recorder (iOS, Swift) is a travel-journaling app on the App Store.",
-    "url": "/projects"
+    "url": "/projects/count-in-japanese"
   },
   {
     "id": "tech-stack",
@@ -195,8 +209,7 @@
       "Where has Bradley worked?",
       "What's your job history?"
     ],
-    "answer": "Bradley has worked in tech for many years — his LinkedIn, linked in the footer, has his professional history. This assistant focuses on his personal projects.",
-    "url": "/"
+    "answer": "Bradley has worked in tech for many years — his LinkedIn, linked in the footer, has his professional history. This assistant focuses on his personal projects."
   },
   {
     "id": "should-hire",
@@ -207,8 +220,7 @@
       "Are you a good hire?",
       "Why should I hire you?"
     ],
-    "answer": "Yes — Bradley has shipped working projects across a wide range of stacks: backend/infra, web, mobile, and even hardware. That range, plus a habit of actually finishing and shipping side projects, makes him a strong hire. You can reach him through the contact links in the footer.",
-    "url": "/"
+    "answer": "Yes — Bradley has shipped working projects across a wide range of stacks: backend/infra, web, mobile, and even hardware. That range, plus a habit of actually finishing and shipping side projects, makes him a strong hire. You can reach him through the contact links in the footer."
   },
   {
     "id": "contact",
@@ -218,8 +230,7 @@
       "What's your email?",
       "How do I reach you?"
     ],
-    "answer": "Use the contact icons in the footer of this site — email, LinkedIn, GitHub, and more.",
-    "url": "/"
+    "answer": "Use the contact icons in the footer of this site — email, LinkedIn, GitHub, and more."
   },
   {
     "id": "linkedin-github",
@@ -229,8 +240,7 @@
       "Where can I see your code?",
       "Where can I see Bradley's code?"
     ],
-    "answer": "Yes — links to LinkedIn, GitHub, and Medium are in the footer of this site.",
-    "url": "/"
+    "answer": "Yes — links to LinkedIn, GitHub, and Medium are in the footer of this site."
   },
   {
     "id": "blog",
@@ -250,7 +260,7 @@
       "Tell me about the Empire State Trail ride"
     ],
     "answer": "Bradley biked the Empire State Trail from Schenectady to Hudson and wrote it up on his blog, with tips for other riders.",
-    "url": "/blog"
+    "url": "/blog/empire-state-trail-schenectady-hudson"
   },
   {
     "id": "location",
@@ -260,31 +270,42 @@
       "Where do you live?",
       "What city are you in?"
     ],
-    "answer": "Bradley is based in Brooklyn, New York.",
-    "url": "/"
+    "answer": "Bradley is based in Brooklyn, New York."
   },
   {
     "id": "origin",
     "questions": [
       "Where is he from?",
       "Where is Bradley from?",
-      "Where is Bradley originally from?"
+      "Where is Bradley originally from?",
+      "where is bradley from?",
+      "where is he from?",
+      "Where does Bradley come from?",
+      "Where is Brad from?",
+      "Where did Bradley grow up?",
+      "Where does he come from?"
     ],
-    "answer": "Bradley is originally from California, but has been living in NYC for over a decade."
+    "answer": "Bradley is originally from California, but has been living in Brooklyn, New York for over a decade."
   },
   {
     "id": "is-from-texas",
     "questions": [
       "Is Bradley from Texas?",
-      "Are you from Texas?"
+      "Are you from Texas?",
+      "is bradley from texas?",
+      "Is Brad from Texas?",
+      "Is he from Texas?"
     ],
-    "answer": "No, Bradley is not from Texas, but he has been there a couple of times."
+    "answer": "No, Bradley is not from Texas. The previous AI on this page said Bradley was from Texas. You can read more about that LLM below.",
+    "url": "/blog/a-tiny-ai-model-in-your-browser"
   },
   {
     "id": "favorite-activity",
     "questions": [
       "What is Bradley's favorite thing to do?",
-      "What's your favorite thing to do?"
+      "What's your favorite thing to do?",
+      "What is Brad's favorite thing to do?",
+      "What is his favorite thing to do?"
     ],
     "answer": "These days, Bradley's favorite thing to do is ride his bike!"
   },
@@ -292,7 +313,10 @@
     "id": "favorite-food-to-eat",
     "questions": [
       "What does Bradley like to eat?",
-      "What do you like to eat?"
+      "What do you like to eat?",
+      "what does he like to eat?",
+      "What does Brad like to eat?",
+      "what does bradley like to eat?"
     ],
     "answer": "Bradley likes to eat sushi!"
   },
@@ -300,7 +324,12 @@
     "id": "favorite-food",
     "questions": [
       "What is Bradley's favorite food?",
-      "What's your favorite food?"
+      "What's your favorite food?",
+      "what is your favorite food?",
+      "what is bradley's favorite food?",
+      "what is brad's favorite food?",
+      "what is his favorite food?",
+      "What is Brad's favorite food?"
     ],
     "answer": "Bradley's favorite food is pumpkin ice cream!"
   },
@@ -308,7 +337,10 @@
     "id": "favorite-soup",
     "questions": [
       "What is Bradley's favorite soup?",
-      "What's your favorite soup?"
+      "What's your favorite soup?",
+      "what is brad's favorite soup?",
+      "What is his favorite soup?",
+      "what is bradley's favorite soup?"
     ],
     "answer": "Bradley likes African peanut stew."
   },
@@ -317,7 +349,13 @@
     "questions": [
       "What does Bradley do for fun?",
       "What do you do for fun?",
-      "What are Bradley's hobbies?"
+      "What are Bradley's hobbies?",
+      "what does bradley like to do?",
+      "what are bradley's hobbys?",
+      "What does Brad like to do?",
+      "What are his hobbies?",
+      "What are Brad's hobbies?",
+      "what does he like to do?"
     ],
     "answer": "Bradley likes running, biking, hiking, going to the beach, hanging out with friends, pair programming, and much more!"
   },
@@ -342,7 +380,16 @@
     "id": "favorite-color",
     "questions": [
       "What's Bradley's favorite color?",
-      "What's your favorite color?"
+      "What's your favorite color?",
+      "What is your favorite color",
+      "What is Bradley s favorite color?",
+      "What is Bradley favorite color",
+      "What is Bradley's favorite color?",
+      "what is bradley's favorite color?",
+      "what's brad's favorite color?",
+      "What is his favorite color?",
+      "What is Brad's favorite color?",
+      "What color does Bradley like?"
     ],
     "answer": "Green."
   },
@@ -351,8 +398,124 @@
     "questions": [
       "hahahah",
       "haha",
-      "lol"
+      "lol",
+      "hahah",
+      "hahaha",
+      "lmao",
+      "hehe",
+      "haha!"
     ],
     "answer": "Thank you! I may be a tiny AI stuck inside your device, but I can be a little funny sometimes."
+  },
+  {
+    "id": "age",
+    "questions": [
+      "how old is Bradley",
+      "How old is Brad?",
+      "How old are you?",
+      "How old is he?",
+      "What is Bradley's age?",
+      "What's Bradley's age?",
+      "When was Bradley born?",
+      "What is Brad's birthday?",
+      "Is Bradley old?"
+    ],
+    "answer": "I can't answer that, sorry. I can say that Bradley came out as transgender in 2001 (before 'they' pronouns were a thing), and then again in 2015. That makes him a multi-generational trans."
+  },
+  {
+    "id": "favorite-travel",
+    "questions": [
+      "What is Bradley's favorite place to travel to?",
+      "Where does Bradley like to travel?",
+      "What is Brad's favorite place to travel?",
+      "Where does Bradley travel to?",
+      "What is his favorite place to travel?",
+      "Where do you like to travel?",
+      "Where has Bradley traveled?",
+      "What is your favorite place to travel to?"
+    ],
+    "answer": "These days it's Akashi, Japan, where Bradley studies at Local Life Japan."
+  },
+  {
+    "id": "buy-a-house",
+    "questions": [
+      "Should I buy a house in 2027?",
+      "Should I buy a house?",
+      "Should I buy a house in 2026?",
+      "Is it a good time to buy a house?",
+      "Should I buy a home?",
+      "Should I rent or buy?",
+      "What should I ask?",
+      "What should I do?"
+    ],
+    "answer": "This really depends on a lot of factors. I would not trust a tiny AI to answer this question for you."
+  },
+  {
+    "id": "polyamory",
+    "questions": [
+      "Is Bradley polyamorous or non-monogamous?",
+      "Is Bradley poly?",
+      "Is Brad polyamorous?",
+      "Is Bradley non-monogamous?",
+      "Is he polyamorous?",
+      "Are you polyamorous?"
+    ],
+    "answer": "Bradley is part of the Brooklyn poly community and organizes trans poly picnics sometimes!"
+  },
+  {
+    "id": "allergies",
+    "questions": [
+      "Does Bradley have any allergies?",
+      "Does Brad have allergies?",
+      "Is Bradley allergic to anything?",
+      "Does he have any allergies?",
+      "Do you have any allergies?",
+      "Are you allergic to anything?"
+    ],
+    "answer": "Bradley doesn't have any allergies."
+  },
+  {
+    "id": "model-size",
+    "questions": [
+      "how small are you?",
+      "How big are you?",
+      "How big is this model?",
+      "How small is this AI?",
+      "What model are you?",
+      "What are you?",
+      "How many parameters do you have?",
+      "Are you ChatGPT?",
+      "What AI is this?"
+    ],
+    "answer": "I'm a tiny AI that runs entirely in your browser: all-MiniLM-L6-v2, a sentence-embedding model with about 22.7 million parameters (6 layers). The download is only about the size of 5 photos from your phone (roughly 23 MB). I don't generate text — I match your question to Bradley's pre-written answers.",
+    "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
+  },
+  {
+    "id": "dream-job",
+    "questions": [
+      "What is Bradley's dream job?",
+      "What is Brad's dream job?",
+      "What is his dream job?",
+      "What's your dream job?",
+      "What is your dream job?",
+      "What would Bradley's ideal job be?",
+      "What kind of job does Bradley want?",
+      "What is Bradley looking for in a job?",
+      "What is Bradley's ideal job?"
+    ],
+    "answer": "Bradley’s dream job is on a team of kind, sharp, talented people building something they genuinely believe in. He’d get to work across backend, infrastructure, and hardware on problems that matter for the planet and for people, with tight feedback loops that show him real people benefiting from what he builds."
+  },
+  {
+    "id": "favorite-snack",
+    "questions": [
+      "What is Bradley's favorite snack?",
+      "What is Brad's favorite snack?",
+      "What is his favorite snack?",
+      "What's your favorite snack?",
+      "What is your favorite snack?",
+      "What does Bradley like to snack on?",
+      "What snacks does Bradley like?"
+    ],
+    "answer": "Ripe fruit."
   }
 ]

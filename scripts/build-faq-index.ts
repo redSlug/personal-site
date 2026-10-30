@@ -9,7 +9,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pipeline } from "@huggingface/transformers";
 
-// all-MiniLM-L6-v2: a ~90MB, 384-dim sentence embedding model — small enough
+// all-MiniLM-L6-v2: a 384-dim sentence embedding model — small enough
 // to load quickly in a browser tab while still giving strong semantic
 // similarity for short FAQ-style questions.
 const EMBEDDING_MODEL = "Xenova/all-MiniLM-L6-v2";
