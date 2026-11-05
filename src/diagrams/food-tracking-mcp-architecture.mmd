@@ -1,0 +1,23 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'ui-sans-serif, system-ui, sans-serif', 'fontSize': '14px', 'lineColor': '#64748b', 'primaryTextColor': '#0f172a'}}}%%
+flowchart LR
+    accTitle: How the food tracking MCP fits together
+    accDescr: You talk to Claude or another LLM client, which calls the MCP server running as a Cloudflare Worker in your own account, after signing in with GitHub. The Worker stores your logs in D1, keeps sign-in grants in KV, and looks up foods from USDA and Open Food Facts. GitHub Actions deploys the Worker but never serves requests.
+    U["You<br/>voice or chat"] --> C["Claude or your fave LLM<br/>MCP connector"]
+    C -->|"MCP over HTTPS<br/>OAuth token"| W["<b>Worker</b> /mcp<br/>your Cloudflare account"]
+    W --> D[("<b>D1</b><br/>your data")]
+    W --> K[("<b>KV</b><br/>sign-in grants")]
+    W -->|"find foods"| F["USDA and<br/>Open Food Facts"]
+    C -.->|"first sign-in only"| G["GitHub<br/>identity only"]
+    G -.-> W
+    A["GitHub Actions"] -->|"test, create, migrate, deploy"| W
+
+    classDef you fill:#dbeafe,stroke:#2563eb,stroke-width:1.5px,color:#1e3a8a
+    classDef code fill:#dcfce7,stroke:#16a34a,stroke-width:1.5px,color:#14532d
+    classDef data fill:#fef3c7,stroke:#d97706,stroke-width:1.5px,color:#78350f
+    classDef outside fill:#ede9fe,stroke:#7c3aed,stroke-width:1.5px,color:#4c1d95
+    classDef auto fill:#f1f5f9,stroke:#64748b,stroke-width:1.5px,color:#0f172a
+    class U,C you
+    class W code
+    class D,K data
+    class F,G outside
+    class A auto

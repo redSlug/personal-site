@@ -14,6 +14,10 @@ function isPostImageFigure(node) {
 function toFigure(img) {
   const alt = img.properties?.alt;
   const children = [img];
+  // Markdown title "phone" (![alt](url "phone")) marks a tall phone screenshot:
+  // show it narrow instead of full column width. The title is not kept as a tooltip.
+  const isPhone = img.properties?.title === "phone";
+  if (isPhone) delete img.properties.title;
 
   if (alt) {
     children.push({
@@ -27,7 +31,7 @@ function toFigure(img) {
   return {
     type: "element",
     tagName: "figure",
-    properties: { className: ["post-image"] },
+    properties: { className: isPhone ? ["post-image", "post-image-phone"] : ["post-image"] },
     children,
   };
 }
@@ -54,7 +58,8 @@ function groupAdjacentImages(children) {
   for (const child of children) {
     if (isPostImageFigure(child)) {
       run.push(child);
-    } else if (isWhitespaceText(child)) {
+    } else if (isWhitespaceText(child) && run.length > 0) {
+      // Only drop whitespace between figures; elsewhere it is the space between inline elements.
       continue;
     } else {
       flushRun();
