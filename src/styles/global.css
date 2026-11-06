@@ -29,3 +29,16 @@
 .image-row .post-image {
   @apply my-0;
 }
+
+/* Diagram edge labels: light text on a page-colored box in dark mode, so the
+   box still breaks the edge line. The SVG is inlined, so it can't see the
+   .dark class itself. */
+.dark .diagram .edgeLabel rect {
+  fill: var(--color-stone-900, #1c1917) !important;
+}
+
+.dark .diagram .edgeLabel text,
+.dark .diagram .edgeLabel tspan {
+  fill: #e2e8f0 !important;
+  stroke: none !important;
+}

@@ -1,15 +1,16 @@
-%%{init: {'theme': 'base', 'htmlLabels': false, 'themeVariables': {'fontFamily': 'ui-sans-serif, system-ui, sans-serif', 'fontSize': '14px', 'lineColor': '#64748b', 'primaryTextColor': '#0f172a'}}}%%
+%%{init: {'theme': 'base', 'htmlLabels': false, 'themeVariables': {'fontFamily': 'Arial, Helvetica, sans-serif', 'fontSize': '14px', 'lineColor': '#64748b', 'primaryTextColor': '#0f172a', 'edgeLabelBackground': '#f1f5f9'}, 'themeCSS': '.edgeLabel rect{opacity:1 !important;} .edgeLabel text{paint-order:stroke;stroke:#f1f5f9;stroke-width:5px;stroke-linejoin:round;}'}}%%
 flowchart LR
     accTitle: How the food tracking MCP fits together
     accDescr: You talk to Claude or another LLM client, which calls the MCP server running as a Cloudflare Worker in your own account, after signing in with GitHub. The Worker stores your logs in D1, keeps sign-in grants in KV, and looks up foods from USDA and Open Food Facts. GitHub Actions deploys the Worker but never serves requests.
     C["AI Agent<br />ex. Claude"]
-    C -->|"log foods + get progress"| W["Worker<br />mcp"]
-    W --> D[("food data + <br />login grants")]
+    C -->|"log foods, get progress"| W["Worker<br />mcp"]
     W -->|"find food"| F["USDA +<br/>Open Food Facts"]
+    W --> D[("food data + <br />login grants")]
     C -.->|"add connector"| G["GitHub<br/>Auth"]
 
     G -.-> W
-    A["GitHub Actions"] -->|"deploy"| W
+    A["GitHub<br />Actions"] -->|"deploy"| W
+    A["GitHub<br />Actions"] -->|"deploy + migrate"| D
 
     classDef you fill:#dbeafe,stroke:#2563eb,stroke-width:1.5px,color:#1e3a8a
     classDef code fill:#dcfce7,stroke:#16a34a,stroke-width:1.5px,color:#14532d
