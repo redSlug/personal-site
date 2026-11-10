@@ -517,5 +517,45 @@
       "What snacks does Bradley like?"
     ],
     "answer": "Ripe fruit."
+  },
+  {
+    "id": "how-do-you-work",
+    "questions": [
+      "How do you work?",
+      "How do you operate?",
+      "How does this work?",
+      "How does this chatbot work?",
+      "How does Tiny AI work?"
+    ],
+    "answer": "I'm an embedded AI, so all I do is match your question to a list of pre-written responses and give you the one that's most closely related. You can read the blog to learn more about how I work.",
+    "url": "/blog/a-tiny-ai-model-in-your-browser"
+  },
+  {
+    "id": "how-does-bradley-work",
+    "questions": [
+      "How does Bradley work?",
+      "What is Bradley's work style?",
+      "What is it like to work with Bradley?",
+      "How does Bradley approach his work?",
+      "How do you approach your work?"
+    ],
+    "answer": "Bradley works collaboratively."
+  },
+  {
+    "id": "data-set",
+    "questions": [
+      "What is your data set?",
+      "What is your dataset?",
+      "What is the Tiny AI data set?",
+      "What is the Tiny AI dataset?",
+      "What data does Tiny AI use?",
+      "What data were you trained on?",
+      "What was Tiny AI trained on?",
+      "What is your training data?",
+      "Where does your data come from?",
+      "What model do you use?"
+    ],
+    "answer": "The datasets used to fine-tune me can be found in the link below. To be clear, as an embedded AI model (all-MiniLM-L6-v2), I can only match sentences. I match your question to pre-written answers that can be found in the source code.",
+    "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
   }
 ]
